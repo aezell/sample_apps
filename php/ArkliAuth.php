@@ -1,4 +1,8 @@
 <?php
+/*
+ * This library file should not have to be modified.
+ */
+
 /* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
 
 class ArkliAuth

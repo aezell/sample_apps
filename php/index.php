@@ -1,5 +1,10 @@
 <?php
-    /* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
+    /* 
+	 * This page is a sample of your login page.
+	 * In reality you will use the login of your own application instead of this.
+	 */
+
+	/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
     session_start();
     $error = null;
     if (isset($_POST['username']) && isset($_POST['password']))
@@ -10,7 +15,7 @@
         if ($user == $password)
         {
             $_SESSION['user'] = $user;
-            header('Location: edit.php');
+            header('Location: app.php');
             return;
         }
         else
@@ -20,7 +25,7 @@
     }
     else if (isset($_SESSION['user']))
     {
-        header('Location: edit.php');
+        header('Location: app.php');
         return;
     }
 ?><!DOCTYPE html>
@@ -34,32 +39,26 @@
         </h1>
         <p>
             This is a sample login page, it creates a session for a user.
-            The username and password should be the same.
+		</p>
+        <p>To authenticate a user, <b>make the username and password the same</b>.
         </p>
-        <?php if ($error != null): ?>
+		<?php if ($error != null): ?>
             <div style="color:red">
                 <?php print $error ?>
             </div>
         <?php endif ?>
         <form method="POST">
             <div>
-                <input type="text"
-                        name="username"
-                        id="username"
-                        placeholder="Username"/>
+                <input type="text" name="username" id="username" 
+					placeholder="Username"/>
             </div>
             <div>
-                <input type="password"
-                        autocomplete="off"
-                        name="password"
-                        id="password"
-                        placeholder="Password"/>
+                <input type="password" autocomplete="off" name="password"
+					id="password" placeholder="Password"/>
             </div>
             <div>
-                <input type="submit"
-                        name="Login"
-                        value="Login"
-                        id="login"/>
+                <input type="submit" name="Login" value="Login"
+                    id="login"/>
             </div>
         </form>
     </body>
