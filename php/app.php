@@ -21,11 +21,13 @@ if (!isset($_SESSION['user']))
 			</p>
 			<script type="text/javascript">
 				// The application id for your application
-				var gArkliAppId = 'localhost';
-				var gArkliAuthEndpoint = 'auth.php';
-				var gArkliHost = 'https://localhost/embed/'; //trailing slash required, default: embed.arkli.com
-				var gArkliAPIHost = 'https://localhost/';
-				var gArkliCDNHost = gArkliHost;
+				var gArkliConfig = {
+					appId: 'localhost',
+					cdnHost: 'https://localhost/embed/',
+					host: 'https://localhost/embed/',
+					apiHost: 'https://localhost/',
+					endPoint: 'auth.php',
+				};
 				/*(function() {
 					var arkS = document.createElement('script');
 					arkS.type = 'text/javascript';
@@ -34,10 +36,8 @@ if (!isset($_SESSION['user']))
 					s.parentNode.insertBefore(arkS, s);
 				})();*/
 			</script>
-			<div id="arkliapp"></div>
 
 			<script src='https://localhost/embed/arkli.js' type='text/javascript'></script>
-			<script src='https://localhost/embed/js/addin_social.js' type='text/javascript'></script>
 			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
 			<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
 
