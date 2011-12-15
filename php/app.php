@@ -1,5 +1,20 @@
 <?php
 /* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
+/**
+ * Display the javascript application
+ *
+ * This file writes the HTML and javascript necessary to display AddIn Social
+ * widgets.  This file requires that auth.php exists, is executable, and is
+ * reachable from the web.
+ *
+ * @package AddInSocial-Demo
+ * @author Sam Wilson <sam@arkli.com>
+ */
+
+/**
+ * Initialize PHP's sessions to access the currently logged in user.  If there
+ * is no logged in user, we redirect to the login url.
+ */
 session_start();
 if (!isset($_SESSION['user']))
 {
@@ -22,24 +37,14 @@ if (!isset($_SESSION['user']))
 			<script type="text/javascript">
 				// The application id for your application
 				var gArkliConfig = {
-					appId: 'localhost',
-					cdnHost: 'https://localhost/embed/',
-					host: 'https://localhost/embed/',
-					apiHost: 'https://localhost/',
-					endPoint: 'auth.php',
+					appId: 'arklidemo',
+					endPoint: 'auth.php'
 				};
-				/*(function() {
-					var arkS = document.createElement('script');
-					arkS.type = 'text/javascript';
-					arkS.src = 'https://localhost/embed/arkli.js';
-					var s = document.getElementsByTagName('script')[0];
-					s.parentNode.insertBefore(arkS, s);
-				})();*/
 			</script>
 
-			<script src='https://localhost/embed/arkli.js' type='text/javascript'></script>
-			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
-			<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+			<script src='//d383k976x0uv95.cloudfront.net/latest/arkli.js' type='text/javascript'></script>
+			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+			<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
 
 			<div id="tabs">
 				<ul>

@@ -1,10 +1,21 @@
 <?php
-/*
- * This library file should not have to be modified.
+/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
+/**
+ * AddIn Social authentication signature library
+ *
+ * This file provides methods to create signatures to use the AddIn Social api.
+ *
+ * @package AddInSocial
+ * @author Sam Wilson <sam@arkli.com>
  */
 
-/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
 
+/**
+ * Provides signature generation methods for use with the AddIn Social api
+ *
+ * @package AddInSocial
+ * @author Sam Wilson <sam@arkli.com>
+ */
 class ArkliAuth
 {
     /**

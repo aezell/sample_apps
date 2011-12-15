@@ -1,33 +1,38 @@
 <?php
-    /* 
-	 * This page is a sample of your login page.
-	 * In reality you will use the login of your own application instead of this.
-	 */
-
-	/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
-    session_start();
-    $error = null;
-    if (isset($_POST['username']) && isset($_POST['password']))
+/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
+/**
+ * Displays a mock login page
+ *
+ * This page represents the login page of your application.  In a real set up
+ * this page would be handled by whatever authentication system your application
+ * uses.
+ *
+ * @package AddInSocial-Demo
+ * @author Sam Wilson <sam@arkli.com>
+ */
+session_start();
+$error = null;
+if (isset($_POST['username']) && isset($_POST['password']))
+{
+    $user = $_POST['username'];
+    $password = $_POST['password'];
+    
+    if ($user == $password)
     {
-        $user = $_POST['username'];
-        $password = $_POST['password'];
-        
-        if ($user == $password)
-        {
-            $_SESSION['user'] = $user;
-            header('Location: app.php');
-            return;
-        }
-        else
-        {
-            $error = 'Invalid username or password';
-        }
-    }
-    else if (isset($_SESSION['user']))
-    {
+        $_SESSION['user'] = $user;
         header('Location: app.php');
         return;
     }
+    else
+    {
+        $error = 'Invalid username or password';
+    }
+}
+else if (isset($_SESSION['user']))
+{
+    header('Location: app.php');
+    return;
+}
 ?><!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
