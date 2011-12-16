@@ -37,35 +37,50 @@ if (!isset($_SESSION['user']))
 			<script type="text/javascript">
 				// The application id for your application
 				var gArkliConfig = {
-					appId: 'arklidemo',
-					endPoint: 'auth.php'
+					appId: 'arklidemo',									// The application id
+					authEndPoint: 'auth.php',							// The url (relative to this page) to request authentication tokens from
+					campaignName: 'bob',								// The name of the campaign to associate publications with
+					vendorCampaignId: 'aoeu'							// Your unique identifier for this campaign
 				};
 			</script>
 
-			<script src='//d383k976x0uv95.cloudfront.net/latest/arkli.js' type='text/javascript'></script>
+			<script src='//dgnhwo58nu60t.cloudfront.net/latest/addin.min.js' type='text/javascript'></script>
 			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
 			<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
 
 			<div id="tabs">
 				<ul>
+					<li><a href="#tabs-0">Accounts</a></li>
 					<li><a href="#tabs-1">Facebook</a></li>
 					<li><a href="#tabs-2">Twitter</a></li>
 					<li><a href="#tabs-3">LinkedIn</a></li>
+					<li><a href="#tabs-4">Publications</a></li>
+					<li><a href="#tabs-5">Comments</a></li>
 				</ul>
+				<div id="tabs-0"></div>
 				<div id="tabs-1"></div>
 				<div id="tabs-2"></div>
 				<div id="tabs-3"></div>
+				<div id="tabs-4"></div>
+				<div id="tabs-5"></div>
 			</div>
 
 			<script type='text/javascript'>
+				// Build the tabs
 				$(function() {
 					$( "#tabs" ).tabs();
 				});
 
+				// Register a callback to be executed when the AddIn library is
+				// ready
 				addin.social(function (AS) {
-					AS('#tabs-1').editBox({type:'facebook'});
-					AS('#tabs-2').editBox({type:'twitter'});
-					AS('#tabs-3').editBox({type:'linkedin'});
+					// Select some elements and attach widgets to them
+					AS('#tabs-0').accounts({});
+					AS('#tabs-1').editor({type:'facebook'});
+					AS('#tabs-2').editor({type:'twitter'});
+					AS('#tabs-3').editor({type:'linkedin'});
+					AS('#tabs-4').publications({});
+					AS('#tabs-5').comments({});
 				});
 			</script>
 		</div>
