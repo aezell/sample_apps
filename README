@@ -1,2 +1,7 @@
 This directory contains fully working sample applications that you can use to 
 build social applications with AddIn Social.
+
+To use the samples you need to set the APP_KEY and APP_SECRET in auth.php, and 
+also set the 'appId' variable in app.php to your application Id.
+
+You can register your application at https://app.addinsocial.com

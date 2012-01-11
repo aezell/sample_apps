@@ -28,14 +28,14 @@
 /**
  * The unique identifier assigned to your application by AddIn Social.
  */
-define("APP_KEY",       "4b5b872355bdd284843298c75a1de91d");
+define("APP_KEY",       "YOUR_APP_KEY");
 
 /**
  * The unique secret used to sign requests on behalf of your application.  Keep
  * this value secret, and never, ever, ever give it to anyone.  APP_SECRET is
  * assigned by AddIn Social.
  */
-define("APP_SECRET",    "bf000926bb1c866d933f5b691dc5cc2f5919987c");
+define("APP_SECRET",    "YOUR_APP_SECRET");
 
 /**
  * The url the javascript application should redirect the user to in case they
