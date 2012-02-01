@@ -86,18 +86,17 @@ if (!isset($_SESSION['user']))
 }
 
 /**
- * Get the username of your user from whatever authentication system your
- * application uses.
+ * A unique identifier of your user.
  */
-$username = $_SESSION["user"];
+$user_identifier = '';  //maybe something like $_SESSION["userid"]?
 
 /**
- * If available, get the username of the currently authenticated user and
+ * If available, get the email address of the currently authenticated user and
  * include it in the signature.
  */
-$email = "sample@example.com";
+$email = "sample@example.com";  //you can leave this blank if you want)
 
 /**
  * Write out the signature generated for the user and email address provided
  */
-print ArkliAuth::create_signature_url(APP_KEY, APP_SECRET, $username, $email);
+print ArkliAuth::create_signature_url(APP_KEY, APP_SECRET, $user_identifier, $email);
