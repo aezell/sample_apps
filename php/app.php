@@ -37,7 +37,6 @@ if (!isset($_SESSION['user']))
 			<script type="text/javascript">
 				// The application id for your application
 				var gArkliConfig = {
-					appId: 'arklidemo',									// The application id
 					authEndPoint: 'auth.php',							// The url (relative to this page) to request authentication tokens from
 					campaignName: 'bob',								// The name of the campaign to associate publications with
 					vendorCampaignId: 'aoeu'							// Your unique identifier for this campaign
@@ -57,7 +56,7 @@ if (!isset($_SESSION['user']))
 					<li><a href="#tabs-4">Publications</a></li>
 					<li><a href="#tabs-5">Comments</a></li>
 				</ul>
-				<div id="tabs-0"></div>
+				<div id="tabs-0"><div class="add"></div><div class="edit"></div></div>
 				<div id="tabs-1"></div>
 				<div id="tabs-2"></div>
 				<div id="tabs-3"></div>
@@ -75,7 +74,8 @@ if (!isset($_SESSION['user']))
 				// ready
 				addin.social(function (AS) {
 					// Select some elements and attach widgets to them
-					AS('#tabs-0').accounts({});
+					AS('#tabs-0 .add').accountsLink({});
+					AS('#tabs-0 .edit').accountsManage({});
 					AS('#tabs-1').editor({type:'facebook'});
 					AS('#tabs-2').editor({type:'twitter'});
 					AS('#tabs-3').editor({type:'linkedin'});
